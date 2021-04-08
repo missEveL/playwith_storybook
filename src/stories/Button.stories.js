@@ -1,36 +1,46 @@
 import React from 'react';
 
-import { Button } from './Button';
+import PdsButton from '../components/pds-button';
 
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: "PDS / Button",
+  component: PdsButton,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    label: {
+      control: {
+        type: "text",
+      }
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+    },
+    color: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary'],
+    },
+    variant: {
+      control: { type: 'select' },
+      options: ['contained', 'outlined', 'text'],
+    },
+    usethemeprovider: {
+      table:{
+        disable:true
+      }
+    },
+    onClick: {
+      table:{
+        disable:true
+      }
+    }
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <PdsButton {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
+export const Button = Template.bind({});
+Button.args = {
   label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+  color: 'primary',
+  variant: 'contained'
 };
