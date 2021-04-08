@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Button } from './Button';
 import './header.css';
+import PdsButton from '../components/pds-button';
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
@@ -28,7 +29,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <PdsButton color="primary" onClick={onLogout} label="Log out" />
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Log in" />
